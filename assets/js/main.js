@@ -74,3 +74,44 @@ bottone1.addEventListener('click', function () {
 
 
 })
+
+// posso passare alla creazione della griglia n° 2
+
+//selezione l'elemento dallas DOM 
+const containerTwo = document.querySelector('.container_difficolta2');
+
+// al click su bottone difficoltà 2 genero una griglia da 1 a 81 con ciclo for
+
+const bottone2 = document.getElementById('bottone2');
+
+
+bottone2.addEventListener('click', function () {
+    for (let i = 1; i <= 81; i++) {
+        // creo l'elemento DOM da mettere nella griglia
+        const divElementTwo = document.createElement('div');
+
+        // creo un paragrafo
+        const par2 = document.createElement('p')
+
+        // appendo l'elemento creatp al container
+        par2.append(i)
+
+        divElementTwo.append(par2)
+
+        //creo una classe da aggiungere al contenitore appena creato
+        divElementTwo.className = 'grid_cell_two'
+
+        // appendo l'elemento creato al container
+        containerTwo.append(divElementTwo)
+
+
+
+        //attacco un eventListner a ciascun elemento creato nel ciclo
+        divElementTwo.addEventListener('click', function () {
+            // modifico il colore delle celle
+            this.style.backgroundColor = 'blue'
+        })
+
+
+    }
+})
