@@ -33,3 +33,44 @@ bottone1.addEventListener('click', function () {
     }
     console.log(bombe)
 
+    for (let i = 1; i <= 100; i++) {
+        // crreo l'elemento dom da mettere nella griglia
+        const divElementOne = document.createElement('div');
+
+        // creo un <p></p>
+        const par1 = document.createElement('p')
+        // appendo l'elemento creatp al container
+        par1.append(i)
+        divElementOne.append(par1)
+
+        //creo una classe da aggiungere al contenitore appena creato
+        divElementOne.className = 'grid_cell_one'
+
+        // appendo l'elemento creato al container
+        containerOne.append(divElementOne)
+
+
+        //attacco un eventListner a ciascun elemento creato nel ciclo
+        divElementOne.addEventListener('click', function () {
+            // modifico il colore di questo elemento con style
+            this.style.backgroundColor = 'blue'
+
+            cellNumber = this.innerHTML
+
+
+            if (bombe.includes(numeriCasuali)) {
+                this.style.backgroundColor = 'red'
+            } else {
+                console.log('continua');
+            }
+        })
+
+
+
+    }
+
+
+
+
+
+})
