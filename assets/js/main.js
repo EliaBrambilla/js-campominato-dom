@@ -115,3 +115,31 @@ bottone2.addEventListener('click', function () {
 
     }
 })
+
+// posso passare alla creazione della griglia n° 3
+
+const containerThree = document.querySelector('.container_difficolta3');
+
+const bottone3 = document.getElementById('bottone3');
+
+bottone3.addEventListener('click', function () {
+    for (let i = 1; i <= 49; i++) {
+
+        const divElementThree = document.createElement('div');
+
+        const par3 = document.createElement('p')
+
+        par3.append(i)
+
+        divElementThree.append(par3)
+
+        divElementThree.className = 'grid_cell_three'
+
+        containerThree.append(divElementThree)
+
+        divElementThree.addEventListener('click', function () {
+            this.style.backgroundColor = 'blue'
+        })
+
+    }
+})
